@@ -1,8 +1,10 @@
 package com.example.androidlifecyle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -57,5 +59,15 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.v("TAG","onRestart Called");
         Toast.makeText(MainActivity.this,"onRestart Called",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
     }
 }
